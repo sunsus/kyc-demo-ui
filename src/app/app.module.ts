@@ -18,13 +18,16 @@ import {MatTabsModule} from "@angular/material/tabs";
 import { IdComponent } from './id/id.component';
 import { DocumentComponent } from './document/document.component';
 import { FamilySituationComponent } from './family-situation/family-situation.component';
+import { RelationshipTableComponent } from './family-situation/relationship-table/relationship-table.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
     AppComponent,
     IdComponent,
     DocumentComponent,
-    FamilySituationComponent
+    FamilySituationComponent,
+    RelationshipTableComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { FamilySituationComponent } from './family-situation/family-situation.co
     MatGridListModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

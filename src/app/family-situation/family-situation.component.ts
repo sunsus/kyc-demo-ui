@@ -14,7 +14,7 @@ export class FamilySituationComponent {
   text: string = ''
   isLoading: boolean = false
   relationshipStatus: string = ''
-  relationships: Array<Relationship> = []
+  relationships: Relationship[] = []
 
   constructor(private http: HttpClient) {
 

@@ -1,7 +1,11 @@
 <form class="kyc-form">
   <mat-form-field class="kyc-full-width textarea-mat-form-field">
     <mat-label>Free text field: Family situation </mat-label>
-    <textarea name="familySituationFreeText" matInput [(ngModel)]="text"></textarea>
+    <textarea name="familySituationFreeText"
+              matInput [(ngModel)]="text"
+              cdkTextareaAutosize
+              cdkAutosizeMinRows="2"
+              cdkAutosizeMaxRows="50"></textarea>
   </mat-form-field>
   <div>
     <button mat-raised-button color="primary" (click)="onGenerate()">Generate</button>

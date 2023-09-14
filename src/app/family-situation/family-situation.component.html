@@ -1,0 +1,20 @@
+<form class="kyc-form">
+  <mat-form-field class="kyc-full-width textarea-mat-form-field">
+    <mat-label>Free text field: Family situation </mat-label>
+    <textarea name="familySituationFreeText" matInput [(ngModel)]="text"></textarea>
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary" (click)="onGenerate()">Generate</button>
+  </div>
+  <mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+  <mat-form-field class="kyc-full-width result-mat-form-field" *ngIf="relationshipStatus">
+    <mat-label>Relationship Status</mat-label>
+    <input matInput readonly [value]="relationshipStatus">
+  </mat-form-field>
+  <div *ngIf="relationships">
+    <mat-form-field class="kyc-full-width" *ngFor="let relation of relationships">
+      <mat-label>{{relation.relation}}</mat-label>
+      <input matInput readonly [value]="relation.fullName">
+    </mat-form-field>
+  </div>
+</form>

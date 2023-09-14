@@ -1,0 +1,27 @@
+.kyc-form {
+  min-width: 300px;
+  max-width: 1024px;
+  width: 100%;
+  padding-top: 50px;
+  padding-left: 25px;
+}
+
+.kyc-full-width {
+  width: 100%;
+}
+
+.textarea-mat-form-field {
+  height: 250px;
+}
+
+.result-mat-form-field {
+  margin-top: 10px;
+}
+
+mat-progress-bar {
+  margin-top: 10px;
+}
+
+textarea {
+  resize: none;
+}

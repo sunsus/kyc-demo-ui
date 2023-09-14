@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-content>
+    <mat-form-field>
+      <mat-label>Enter Document URL</mat-label>
+      <input matInput [(ngModel)]="idUrl" type="text">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select Model</mat-label>
+      <mat-select required [(value)]="selectedModel" [disabled]="true">
+        <mat-option value="prebuilt-idDocument">ID Card Model</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div>
+      <button mat-raised-button color="primary" (click)="sendIdData()" [disabled]="isLoading">Parse ID</button>
+      <button mat-raised-button color="warn" (click)="reset()" [disabled]="isLoading">Reset</button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading"></mat-progress-bar>
+
+<mat-card *ngIf="documentImage && structuredData" style="max-width: 800px; margin-top: 50px">
+  <mat-card-header>
+    <mat-card-title>Result</mat-card-title>
+    <mat-card-subtitle>ID Document</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="idUrl" alt="ID">
+  <mat-card-content>
+    <p>{{structuredData}}</p>
+  </mat-card-content>
+</mat-card>

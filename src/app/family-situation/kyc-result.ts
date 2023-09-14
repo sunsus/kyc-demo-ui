@@ -1,6 +1,7 @@
 export interface KycResult {
   relationshipStatus: string
-  relationships: Array<Relationship>
+  relationships: Relationship[]
+  dateOfBirth?: string
 }
 
 export interface Relationship {

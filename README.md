@@ -12,6 +12,10 @@ You need to have the following software installed to run this on your machine:
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## Test data
+
+Ines Meier ist die Tocher von Katrin Meier (gb. 20.05.1947) und Otto Müller (geb. 23.04.1944). Sie hat eine Schwester, Magda Meier-Lenz (gb. 29.06.1978). Der Grossvater Jürg Schreiner (geb. 03.01.1920) ist per 1.1.2015 verstorben. Per April 208 ist Ines Meier verheiratet mit König, Max (geb. 28.06.1970). Der Ehemann arbeitet seit Jahren bei der Sika AG, Zürich. Kinder: Meier, Sonja geb 15.09.2012 und Meier, Anton (geb. 16.03.2022)
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

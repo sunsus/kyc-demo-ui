@@ -14,6 +14,7 @@ export class FamilySituationComponent {
   text: string = ''
   isLoading: boolean = false
   relationshipStatus: string = ''
+  dateOfBirth: string = ''
   relationships: Relationship[] = []
 
   constructor(private http: HttpClient) {
@@ -29,6 +30,7 @@ export class FamilySituationComponent {
           console.log(data)
           const kycResult = data as KycResult
           this.relationshipStatus = kycResult.relationshipStatus
+          this.dateOfBirth = kycResult.dateOfBirth ?? 'n/a'
           this.relationships = kycResult.relationships
           this.isLoading = false
         },

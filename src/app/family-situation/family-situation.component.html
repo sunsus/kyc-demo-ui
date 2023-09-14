@@ -15,6 +15,10 @@
     <mat-label>Relationship Status</mat-label>
     <input matInput readonly [value]="relationshipStatus">
   </mat-form-field>
+  <mat-form-field class="kyc-full-width result-mat-form-field" *ngIf="relationshipStatus">
+    <mat-label>Date of Birth</mat-label>
+    <input matInput readonly [value]="dateOfBirth">
+  </mat-form-field>
   <div *ngIf="relationships && relationships.length > 0">
     <app-relationship-table [relationships]="relationships"></app-relationship-table>
   </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {KycResult, Relationship} from "./kyc-result";
@@ -17,9 +17,7 @@ export class FamilySituationComponent {
   dateOfBirth: string = ''
   relationships: Relationship[] = []
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) { }
 
   onGenerate() {
     console.log(`Text: ` + this.text)

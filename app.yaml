@@ -1,0 +1,20 @@
+runtime: nodejs18  # This specifies the runtime (not relevant for Angular, but required by App Engine)
+
+service: default-ui
+
+handlers:
+  - url: /(.*\.(js|css|png|jpg|jpeg|gif|ico|json|woff2))$  # Define how to handle static assets
+    static_files: dist/ai-platform-ui/\1
+    upload: dist/ai-platform-ui/.*\.(js|css|png|jpg|jpeg|gif|ico|json|woff2)$
+
+  - url: /(.*)
+    static_files: dist/ai-platform-ui/index.html  # Handle the Angular app's index.html
+    upload: dist/ai-platform-ui/index.html
+
+  - url: /.*
+    script: auto  # Let App Engine serve other requests with its default handlers
+
+env_variables:
+# NGINX_SERVER_NAME: your-custom-domain.com  # Optional: Set your custom domain here if you have one
+
+# Optional: You can add more configuration as needed, such as scaling settings, instance class, etc.

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: 'http://your-production-server.com' // add this line
+  backendUrl: 'https://silent-relic-393813.ew.r.appspot.com' // add this line
 };

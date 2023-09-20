@@ -7,4 +7,5 @@ export interface KycResult {
 export interface Relationship {
   relation: string
   fullName: string
+  dateOfBirth?: string
 }

@@ -8,7 +8,7 @@ import { Relationship } from '../kyc-result';
   styleUrls: ['./relationship-table.component.css'],
 })
 export class RelationshipTableComponent implements OnInit {
-  displayedColumns: string[] = ['relation', 'fullName']
+  displayedColumns: string[] = ['relation', 'fullName', 'dateOfBirth']
   dataSource = new MatTableDataSource<Relationship>()
 
   @Input() relationships: Relationship[] = []

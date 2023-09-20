@@ -3,3 +3,8 @@ textarea {
   font-size: 12px;
   min-height: 500px;
 }
+
+mat-toolbar {
+  background-color: #F0EDE4;
+  color: #373A36;
+}

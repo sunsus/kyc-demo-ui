@@ -11,10 +11,16 @@
     <td mat-cell *matCellDef="let element"> {{ element.fullName }} </td>
   </ng-container>
 
- <!-- Date of birth Column -->
+  <!-- Date of Birth Column -->
   <ng-container matColumnDef="dateOfBirth">
-    <th mat-header-cell *matHeaderCellDef> Date of birth </th>
+    <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
     <td mat-cell *matCellDef="let element"> {{ element.dateOfBirth }} </td>
+  </ng-container>
+
+  <!-- Date of Birth Column -->
+  <ng-container matColumnDef="dateOfDeath">
+    <th mat-header-cell *matHeaderCellDef> Date of Death </th>
+    <td mat-cell *matCellDef="let element"> {{ element.dateOfDeath }} </td>
   </ng-container>
 
   <!-- Column Definitions -->

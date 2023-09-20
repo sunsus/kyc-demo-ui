@@ -22,4 +22,14 @@
   <div *ngIf="relationships && relationships.length > 0">
     <app-relationship-table [relationships]="relationships"></app-relationship-table>
   </div>
+  <mat-accordion *ngIf="remarks">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Remarks
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{remarks}}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
 </form>

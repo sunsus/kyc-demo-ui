@@ -14,6 +14,11 @@
   height: 250px;
 }
 
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #F0EDE4;
+}
+
+
 .result-mat-form-field {
   margin-top: 10px;
 }
@@ -24,4 +29,30 @@ mat-progress-bar {
 
 textarea {
   resize: none;
+}
+
+mat-label {
+  color: #373A36;
+}
+
+:host ::ng-deep .mat-mdc-raised-button:not(:disabled) {
+  background-color: #ffdb33;
+  color: #373A36;
+}
+
+.mat-mdc-progress-bar {
+  --mdc-linear-progress-active-indicator-color: #FB6F90;
+  --mdc-linear-progress-track-color: #E3E3E3;
+}
+
+mat-expansion-panel {
+  margin-top: 10px;
+}
+
+mat-expansion-panel {
+  color: #373A36;
+}
+
+mat-panel-title {
+  color: #373A36;
 }

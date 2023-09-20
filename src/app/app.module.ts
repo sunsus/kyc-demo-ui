@@ -20,6 +20,7 @@ import { DocumentComponent } from './document/document.component';
 import { FamilySituationComponent } from './family-situation/family-situation.component';
 import { RelationshipTableComponent } from './family-situation/relationship-table/relationship-table.component';
 import {MatTableModule} from "@angular/material/table";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -29,23 +30,24 @@ import {MatTableModule} from "@angular/material/table";
     FamilySituationComponent,
     RelationshipTableComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatCardModule,
-    MatToolbarModule,
-    MatSelectModule,
-    MatDividerModule,
-    MatGridListModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    MatTabsModule,
-    MatTableModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatInputModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatSelectModule,
+        MatDividerModule,
+        MatGridListModule,
+        MatProgressSpinnerModule,
+        MatProgressBarModule,
+        MatTabsModule,
+        MatTableModule,
+        MatExpansionModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

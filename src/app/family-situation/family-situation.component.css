@@ -29,6 +29,7 @@ mat-progress-bar {
 
 textarea {
   resize: none;
+  overflow-y: scroll;
 }
 
 mat-label {

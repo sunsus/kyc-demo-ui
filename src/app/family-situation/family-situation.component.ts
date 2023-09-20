@@ -16,6 +16,7 @@ export class FamilySituationComponent {
   relationshipStatus: string = ''
   dateOfBirth: string = ''
   relationships: Relationship[] = []
+  remarks: string = ''
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +31,7 @@ export class FamilySituationComponent {
           this.relationshipStatus = kycResult.relationshipStatus
           this.dateOfBirth = kycResult.dateOfBirth ?? 'n/a'
           this.relationships = kycResult.relationships
+          this.remarks = kycResult.remarks ?? ''
           this.isLoading = false
         },
         error => {

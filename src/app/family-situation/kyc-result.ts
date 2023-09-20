@@ -2,6 +2,7 @@ export interface KycResult {
   relationshipStatus: string
   relationships: Relationship[]
   dateOfBirth?: string
+  remarks?: string
 }
 
 export interface Relationship {

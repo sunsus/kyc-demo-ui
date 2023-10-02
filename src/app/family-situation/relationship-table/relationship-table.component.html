@@ -95,13 +95,13 @@
       </tr>
       </thead>
       <tbody>
-      <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="0" *ngFor="let relationship of relationships">
+      <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="0" *ngFor="let relationship of relationships; index as i">
         <td class="slds-text-align_right" role="gridcell" style="width:3.25rem">
           <div class="slds-checkbox">
-            <input type="checkbox" name="options" id="checkbox-0475" value="checkbox-0475" aria-labelledby="check-button-label-0475 column-group-header" />
-            <label class="slds-checkbox__label" for="checkbox-0475" id="check-button-label-0475">
+            <input type="checkbox" name="options" id="checkbox-{{'checkbox-'+i }}" value="{{'checkbox-'+ i }}" aria-labelledby="column-group-header" />
+            <label class="slds-checkbox__label" for="{{ 'checkbox-'+i }}" id="{{'check-button-label-' + i }}">
               <span class="slds-checkbox_faux"></span>
-              <span class="slds-form-element__label slds-assistive-text">Select item {{ relationship.relation }}</span>
+              <span class="slds-form-element__label slds-assistive-text">Select item {{ i }}</span>
             </label>
           </div>
         </td>
@@ -122,10 +122,5 @@
       </tr>
       </tbody>
     </table>
-    <footer class="slds-card__footer">
-      <a class="slds-card__footer-action" href="#">View All
-        <span class="slds-assistive-text">Contacts</span>
-      </a>
-    </footer>
   </div>
 </article>

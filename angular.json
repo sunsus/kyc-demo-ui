@@ -21,14 +21,22 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/@salesforce-ux/design-system/assets/",
+                "output": "/assets"
+              },
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.min.css",
+              "node_modules/@angular/cdk/overlay-prebuilt.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           },
           "configurations": {
             "production": {

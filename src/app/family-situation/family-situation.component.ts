@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, SimpleChange} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {KycResult, Relationship} from "./kyc-result";
@@ -10,34 +10,9 @@ import {KycResult, Relationship} from "./kyc-result";
 })
 export class FamilySituationComponent {
 
-  backendUrl = environment.backendUrl;
-  text: string = ''
-  isLoading: boolean = false
-  relationshipStatus: string = ''
-  dateOfBirth: string = ''
-  relationships: Relationship[] = []
-  remarks: string = ''
+  constructor() { }
 
-  constructor(private http: HttpClient) { }
+  @Input() kycResult: KycResult;
+  @Input() isLoading: boolean;
 
-  onGenerate() {
-    console.log(`Text: ` + this.text)
-    this.isLoading = true
-    this.http.post(`${this.backendUrl}/familySituation`, { text: this.text })
-      .subscribe(
-        data => {
-          console.log(data)
-          const kycResult = data as KycResult
-          this.relationshipStatus = kycResult.relationshipStatus
-          this.dateOfBirth = kycResult.dateOfBirth ?? 'n/a'
-          this.relationships = kycResult.relationships
-          this.remarks = kycResult.remarks ?? ''
-          this.isLoading = false
-        },
-        error => {
-          console.error(error);
-          this.isLoading = false
-        }
-      );
-  }
 }

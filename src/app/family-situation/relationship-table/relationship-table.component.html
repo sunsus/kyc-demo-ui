@@ -1,29 +1,100 @@
-<table mat-table [dataSource]="dataSource">
-  <!-- Relation Column -->
-  <ng-container matColumnDef="relation">
-    <th mat-header-cell *matHeaderCellDef> Relation </th>
-    <td mat-cell *matCellDef="let element"> {{ element.relation }} </td>
-  </ng-container>
+<table aria-multiselectable="true" class="slds-table slds-table_bordered slds-table_edit slds-table_fixed-layout slds-table_resizable-cols slds-tree slds-table_tree" role="treegrid" aria-label="Example default tree grid">
+  <thead>
+  <tr class="slds-line-height_reset">
+    <th class="slds-text-align_right" scope="col" style="width:3.25rem">
+      <span id="column-group-header" class="slds-assistive-text">Choose a row</span>
+      <div class="slds-th__action slds-th__action_form">
+        <div class="slds-checkbox">
+          <input type="checkbox" name="options" id="checkbox-unique-id-534" value="checkbox-unique-id-534" tabindex="-1" aria-labelledby="check-select-all-label column-group-header" />
+          <label class="slds-checkbox__label" for="checkbox-unique-id-534" id="check-select-all-label">
+            <span class="slds-checkbox_faux"></span>
+            <span class="slds-form-element__label slds-assistive-text">Select All</span>
+          </label>
+        </div>
+      </div>
+    </th>
+    <th aria-sort="none" class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+      <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+        <span class="slds-assistive-text">Sort by: </span>
+        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+          <span class="slds-truncate" title="Relation">Relation</span>
+          <span class="slds-icon_container slds-icon-utility-arrowdown">
+              <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+              </svg>
+            </span>
+        </div>
+      </a>
+    </th>
 
-  <!-- Full Name Column -->
-  <ng-container matColumnDef="fullName">
-    <th mat-header-cell *matHeaderCellDef> Full Name </th>
-    <td mat-cell *matCellDef="let element"> {{ element.fullName }} </td>
-  </ng-container>
+    <th aria-sort="none" class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+      <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+        <span class="slds-assistive-text">Sort by: </span>
+        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+          <span class="slds-truncate" title="Full Name">Full Name</span>
+          <span class="slds-icon_container slds-icon-utility-arrowdown">
+              <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+              </svg>
+            </span>
+        </div>
+      </a>
+    </th>
 
-  <!-- Date of Birth Column -->
-  <ng-container matColumnDef="dateOfBirth">
-    <th mat-header-cell *matHeaderCellDef> Date of Birth </th>
-    <td mat-cell *matCellDef="let element"> {{ element.dateOfBirth }} </td>
-  </ng-container>
+    <th aria-sort="none" class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+      <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+        <span class="slds-assistive-text">Sort by: </span>
+        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+          <span class="slds-truncate" title="Date of Birth">Date of Birth</span>
+          <span class="slds-icon_container slds-icon-utility-arrowdown">
+              <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+              </svg>
+            </span>
+        </div>
+      </a>
+    </th>
 
-  <!-- Date of Birth Column -->
-  <ng-container matColumnDef="dateOfDeath">
-    <th mat-header-cell *matHeaderCellDef> Date of Death </th>
-    <td mat-cell *matCellDef="let element"> {{ element.dateOfDeath }} </td>
-  </ng-container>
-
-  <!-- Column Definitions -->
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <th aria-sort="none" class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+      <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+        <span class="slds-assistive-text">Sort by: </span>
+        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+          <span class="slds-truncate" title="Date of Death">Date of Death</span>
+          <span class="slds-icon_container slds-icon-utility-arrowdown">
+              <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+              </svg>
+            </span>
+        </div>
+      </a>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr aria-level="1" aria-posinset="1" aria-selected="false" aria-setsize="4" class="slds-hint-parent" tabindex="0" *ngFor="let relationship of relationships">
+    <td class="slds-text-align_right" role="gridcell" style="width:3.25rem">
+      <div class="slds-checkbox">
+        <input type="checkbox" name="options" id="checkbox-0475" value="checkbox-0475" aria-labelledby="check-button-label-0475 column-group-header" />
+        <label class="slds-checkbox__label" for="checkbox-0475" id="check-button-label-0475">
+          <span class="slds-checkbox_faux"></span>
+          <span class="slds-form-element__label slds-assistive-text">Select item {{ relationship.relation }}</span>
+        </label>
+      </div>
+    </td>
+    <td data-label="Relation" role="gridcell">
+      <div class="slds-truncate" title="{{ relationship.relation }}">{{ relationship.relation }}</div>
+    </td>
+    <td data-label="Full Name" role="gridcell">
+      <div class="slds-truncate" title="{{ relationship.fullName }}">{{ relationship.fullName }}</div>
+    </td>
+    <td data-label="Data of Birth" role="gridcell">
+      <div class="slds-truncate" title="{{ relationship.dateOfBirth }}">
+        {{ relationship.dateOfBirth }}
+      </div>
+    </td>
+    <td data-label="Data of Death" role="gridcell">
+      <div class="slds-truncate" title="{{ relationship.dateOfDeath }}">{{ relationship.dateOfDeath }}</div>
+    </td>
+  </tr>
+  </tbody>
 </table>

@@ -1,4 +1,5 @@
 export interface KycResult {
+  fullName: string
   relationshipStatus: string
   relationships: Relationship[]
   dateOfBirth?: string

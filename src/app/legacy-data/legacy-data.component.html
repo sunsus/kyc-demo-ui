@@ -6,7 +6,7 @@
       </ngl-textarea>
     </div>
   </div>
-  <ngl-file-upload label="Attachment" [formControl]="ctrl" [accept]="['image/*', 'application/pdf']" [maxFiles]="maxFiles" [maxFilesize]="maxFileSize" [error]="$any(ctrl.invalid ? errorTpl : null)"></ngl-file-upload>
+  <ngl-file-upload label="Attachments" [formControl]="ctrl" [accept]="['image/*', 'application/pdf']" [maxFiles]="maxFiles" [maxFilesize]="maxFileSize" [error]="$any(ctrl.invalid ? errorTpl : null)"></ngl-file-upload>
 
   <div class="slds-text-heading_small slds-m-top_large slds-text-color_success" *ngIf="ctrl.valid">
     <div *ngFor="let file of ctrl.value">{{ file.name }}</div>

@@ -100,7 +100,7 @@
       </div>
       <div class="slds-grid slds-path__action">
         <span id="slds-path__stage-name" class="slds-path__stage-name">Stage: Review</span>
-        <button type="button" class="slds-path__mark-complete" nglButton iconName="utility:check" variant="brand" (click)="onStateChange()" [disabled]="isLoading">Process Data</button>
+        <button type="button" class="slds-path__mark-complete" nglButton iconName="utility:check" variant="brand" (click)="onStateChange()" [disabled]="isLoading || !text">Process Data</button>
       </div>
     </div>
   </div>

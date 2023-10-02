@@ -1,0 +1,21 @@
+<div class="slds-m-horizontal_large">
+  <div class="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center slds-m-top_large">
+    <div class="slds-col_padded">
+      <ngl-textarea label="Family situation" fieldLevelHelpTooltip="Free text field: Family situation">
+        <textarea ngl required rows="8" placeholder="Free text field" [(ngModel)]="text" (ngModelChange)="onTextChange()"></textarea>
+      </ngl-textarea>
+    </div>
+  </div>
+  <ngl-file-upload label="Attachment" [formControl]="ctrl" [accept]="['image/*', 'application/pdf']" [maxFiles]="maxFiles" [maxFilesize]="maxFileSize" [error]="$any(ctrl.invalid ? errorTpl : null)"></ngl-file-upload>
+
+  <div class="slds-text-heading_small slds-m-top_large slds-text-color_success" *ngIf="ctrl.valid">
+    <div *ngFor="let file of ctrl.value">{{ file.name }}</div>
+  </div>
+
+  <ng-template #errorTpl>
+    <ng-container *ngIf="ctrl.errors && ctrl.errors['required']">Please select a file.</ng-container>
+    <ng-container *ngIf="ctrl.errors && ctrl.errors['nglFileUpload']?.invalidType as file">Oh no, invalid type<b> {{ file.type }}</b> for "{{ file.name}}"!</ng-container>
+    <ng-container *ngIf="ctrl.errors && ctrl.errors['nglFileUpload']?.maxFilesize as file">"{{ file.name}}" is bigger than 1MB!</ng-container>
+    <ng-container *ngIf="ctrl.errors && ctrl.errors['nglFileUpload']?.maxFiles">Too many files selected!</ng-container>
+  </ng-template>
+</div>

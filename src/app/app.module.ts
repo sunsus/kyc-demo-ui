@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {NglModule} from 'ng-lightning';
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FamilySituationComponent } from './family-situation/family-situation.component';
 import { RelationshipTableComponent } from './family-situation/relationship-table/relationship-table.component';
@@ -19,13 +19,14 @@ import { LegacyDataComponent } from './legacy-data/legacy-data.component';
     MigrationComponent,
     LegacyDataComponent
   ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-        FormsModule,
-        BrowserAnimationsModule,
-        NglModule
-    ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    NglModule
+  ],
   providers: [
   ],
   bootstrap: [AppComponent]

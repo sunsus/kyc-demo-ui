@@ -10,6 +10,7 @@ import { FamilySituationComponent } from './family-situation/family-situation.co
 import { RelationshipTableComponent } from './family-situation/relationship-table/relationship-table.component';
 import { MigrationComponent } from './migration/migration.component';
 import { LegacyDataComponent } from './legacy-data/legacy-data.component';
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -19,14 +20,15 @@ import { LegacyDataComponent } from './legacy-data/legacy-data.component';
     MigrationComponent,
     LegacyDataComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    NglModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        NglModule,
+        NgOptimizedImage
+    ],
   providers: [
   ],
   bootstrap: [AppComponent]

@@ -11,8 +11,8 @@ import {HttpClient} from "@angular/common/http";
 export class MigrationComponent {
 
   backendUrl = environment.backendUrl;
-  text: string;
-  kycResult: KycResult;
+  text?: string;
+  kycResult?: KycResult;
   isLoading: boolean = false;
   relationships: Relation[] = []
   state: string = 'source'
@@ -29,7 +29,7 @@ export class MigrationComponent {
   onProcess() {
     console.log(`Text: ` + this.text)
     this.isLoading = true
-    this.http.post(`${this.backendUrl}/familySituation`, { text: this.text })
+    this.http.post(`${this.backendUrl}/familySituationNew`, { text: this.text })
       .subscribe(
         data => {
           console.log(data)

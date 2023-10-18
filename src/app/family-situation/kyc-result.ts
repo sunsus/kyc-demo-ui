@@ -1,9 +1,17 @@
 export interface KycResult {
-  fullName?: string
+  personalDetails?: PersonalDetails
   civilStatus?: CivilStatus
   partnerRelations: PartnerRelations
   dateOfBirth?: string
   remarks?: string
+}
+
+export interface PersonalDetails {
+  firstName?: string
+  lastName?: string
+  dateOfBirth?: string
+  nationality?: string
+  domicile?: string
 }
 
 export interface CivilStatus {

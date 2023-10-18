@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build-prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -16,10 +17,11 @@
     "@angular/compiler": "^16.2.0",
     "@angular/core": "^16.2.0",
     "@angular/forms": "^16.2.0",
-    "@angular/material": "^16.2.3",
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@salesforce-ux/design-system": "^2.22.0",
+    "ng-lightning": "^9.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -36,5 +38,13 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.1.3"
+  },
+  "overrides": {
+      "ng-lightning": {
+        "@angular/cdk@": "16.2.3",
+        "@angular/common@": "^16.0.0 || ^17.0.0",
+        "@angular/core@": "^16.0.0 || ^17.0.0",
+        "@angular/forms@": "^16.0.0 || ^17.0.0"
+      }
   }
 }

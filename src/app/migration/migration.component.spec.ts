@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IdComponent } from './id.component';
+import { MigrationComponent } from './migration.component';
 
-describe('IdComponent', () => {
-  let component: IdComponent;
-  let fixture: ComponentFixture<IdComponent>;
+describe('MigrationComponent', () => {
+  let component: MigrationComponent;
+  let fixture: ComponentFixture<MigrationComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [IdComponent]
+      declarations: [MigrationComponent]
     });
-    fixture = TestBed.createComponent(IdComponent);
+    fixture = TestBed.createComponent(MigrationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

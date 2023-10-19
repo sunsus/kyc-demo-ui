@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {environment} from "../../environments/environment";
-import {KycResult, Relationship} from "../family-situation/kyc-result";
+import {KycResult, Relation} from "../family-situation/kyc-result";
 import {HttpClient} from "@angular/common/http";
 
 @Component({
@@ -11,10 +11,10 @@ import {HttpClient} from "@angular/common/http";
 export class MigrationComponent {
 
   backendUrl = environment.backendUrl;
-  text: string;
-  kycResult: KycResult;
+  text?: string;
+  kycResult?: KycResult;
   isLoading: boolean = false;
-  relationships: Relationship[] = []
+  relationships: Relation[] = []
   state: string = 'source'
 
   constructor(private http: HttpClient) { }
@@ -29,12 +29,12 @@ export class MigrationComponent {
   onProcess() {
     console.log(`Text: ` + this.text)
     this.isLoading = true
-    this.http.post(`${this.backendUrl}/familySituation`, { text: this.text })
+    this.http.post(`${this.backendUrl}/familySituationNew`, { text: this.text })
       .subscribe(
         data => {
           console.log(data)
           const kycResult = data as KycResult
-          this.relationships = kycResult.relationships!
+          this.relationships = kycResult.partnerRelations.relations
           this.isLoading = false
           this.kycResult = kycResult
         },

@@ -1,7 +1,7 @@
 import {Component, Input, SimpleChange} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
-import {KycResult, Relationship} from "./kyc-result";
+import {KycResult, Relation} from "./kyc-result";
 
 @Component({
   selector: 'app-family-situation',
@@ -10,9 +10,6 @@ import {KycResult, Relationship} from "./kyc-result";
 })
 export class FamilySituationComponent {
 
-  constructor() { }
-
   @Input() kycResult: KycResult;
   @Input() isLoading: boolean;
-
 }

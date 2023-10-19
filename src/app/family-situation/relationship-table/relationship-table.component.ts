@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import { Relationship } from '../kyc-result';
+import { Relation } from '../kyc-result';
 
 @Component({
   selector: 'app-relationship-table',
@@ -8,7 +8,7 @@ import { Relationship } from '../kyc-result';
 })
 export class RelationshipTableComponent implements OnInit, OnChanges {
 
-  @Input() relationships: Relationship[] = []
+  @Input() relationships: Relation[] = []
 
   ngOnInit(): void {
   }

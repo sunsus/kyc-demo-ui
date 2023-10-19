@@ -25,20 +25,59 @@
       </div>
     </div>
   </div>
-  <div class="slds-page-header__row slds-page-header__row_gutters" *ngIf="kycResult?.relationshipStatus || kycResult?.dateOfBirth || kycResult?.fullName">
-    <div class="slds-page-header__col-details">
+
+
+  <div class="slds-page-header__row slds-page-header__row_gutters">
+    <div class="slds-page-header__col-details" *ngIf="kycResult">
       <ul class="slds-page-header__detail-row">
-        <li class="slds-page-header__detail-block" *ngIf="kycResult?.fullName">
-          <div class="slds-text-title slds-truncate" title="Full Name">Full Name</div>
-          <div class="slds-truncate" title="{{kycResult.fullName}}">{{kycResult.fullName}}</div>
+
+        <!-- FIRST NAME -->
+        <li class="slds-page-header__detail-block">
+          <div class="slds-text-title slds-truncate">First Name</div>
+          <div class="slds-truncate">
+            {{ kycResult.personalDetails?.firstName ?? 'n/a' }}
+          </div>
         </li>
-        <li class="slds-page-header__detail-block" *ngIf="kycResult?.relationshipStatus">
-          <div class="slds-text-title slds-truncate" title="Relationship Status">Relationship Status</div>
-          <div class="slds-truncate" title="{{kycResult.relationshipStatus}}">{{kycResult.relationshipStatus}}</div>
+
+        <!-- LAST NAME -->
+        <li class="slds-page-header__detail-block">
+          <div class="slds-text-title slds-truncate">Last Name</div>
+          <div class="slds-truncate">
+            {{ kycResult.personalDetails?.lastName ?? 'n/a' }}
+          </div>
         </li>
-        <li class="slds-page-header__detail-block" *ngIf="kycResult?.dateOfBirth">
-          <div class="slds-text-title slds-truncate" title="Data of Birth">Date of Birth</div>
-          <div class="slds-truncate" title="{{kycResult.dateOfBirth}}">{{kycResult.dateOfBirth}}</div>
+
+        <!-- CIVIL STATUS -->
+        <li class="slds-page-header__detail-block">
+          <div class="slds-text-title slds-truncate">Civil Status</div>
+          <div class="slds-truncate">
+            {{kycResult.civilStatus?.civilStatus?.toLowerCase() ?? "n/a"}}
+            (since {{kycResult.civilStatus?.changeOfCivilStatus ?? "n/a"}})
+          </div>
+        </li>
+
+        <!-- DATE OF BIRTH -->
+        <li class="slds-page-header__detail-block">
+          <div class="slds-text-title slds-truncate">Date of Birth</div>
+          <div class="slds-truncate">
+            {{kycResult.personalDetails?.dateOfBirth}}
+          </div>
+        </li>
+
+        <!-- NATIONALITY -->
+        <li class="slds-page-header__detail-block">
+          <div class="slds-text-title slds-truncate">Nationality</div>
+          <div class="slds-truncate">
+            {{kycResult.personalDetails?.nationality}}
+          </div>
+        </li>
+
+        <!-- DOMICILE -->
+        <li class="slds-page-header__detail-block">
+          <div class="slds-text-title slds-truncate">Domicile</div>
+          <div class="slds-truncate">
+            {{kycResult.personalDetails?.domicile}}
+          </div>
         </li>
       </ul>
     </div>
@@ -110,5 +149,5 @@
   <ngl-spinner alternativeText="Loading"></ngl-spinner>
 </div>
 <app-legacy-data (text)="onTextChange($event)" *ngIf="state == 'source'"></app-legacy-data>
-<app-family-situation [kycResult]="kycResult" [isLoading]="isLoading" *ngIf="state == 'review' && !isLoading"></app-family-situation>
+<app-family-situation [kycResult]="kycResult!!" [isLoading]="isLoading" *ngIf="state == 'review' && !isLoading && kycResult"></app-family-situation>
 

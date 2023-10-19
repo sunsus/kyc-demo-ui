@@ -35,7 +35,7 @@
         <li class="slds-page-header__detail-block">
           <div class="slds-text-title slds-truncate">First Name</div>
           <div class="slds-truncate">
-            {{ kycResult?.personalDetails?.firstName ?? 'n/a' }}
+            {{ kycResult.personalDetails?.firstName ?? 'n/a' }}
           </div>
         </li>
 
@@ -43,7 +43,7 @@
         <li class="slds-page-header__detail-block">
           <div class="slds-text-title slds-truncate">Last Name</div>
           <div class="slds-truncate">
-            {{ kycResult?.personalDetails?.lastName ?? 'n/a' }}
+            {{ kycResult.personalDetails?.lastName ?? 'n/a' }}
           </div>
         </li>
 
@@ -51,8 +51,8 @@
         <li class="slds-page-header__detail-block">
           <div class="slds-text-title slds-truncate">Civil Status</div>
           <div class="slds-truncate">
-            {{kycResult?.civilStatus?.civilStatus?.toLowerCase() ?? "n/a"}}
-            (since {{kycResult?.civilStatus?.changeOfCivilStatus ?? "n/a"}})
+            {{kycResult.civilStatus?.civilStatus?.toLowerCase() ?? "n/a"}}
+            (since {{kycResult.civilStatus?.changeOfCivilStatus ?? "n/a"}})
           </div>
         </li>
 
@@ -60,7 +60,7 @@
         <li class="slds-page-header__detail-block">
           <div class="slds-text-title slds-truncate">Date of Birth</div>
           <div class="slds-truncate">
-            {{kycResult?.personalDetails?.dateOfBirth}}
+            {{kycResult.personalDetails?.dateOfBirth}}
           </div>
         </li>
 
@@ -68,7 +68,7 @@
         <li class="slds-page-header__detail-block">
           <div class="slds-text-title slds-truncate">Nationality</div>
           <div class="slds-truncate">
-            {{kycResult?.personalDetails?.nationality}}
+            {{kycResult.personalDetails?.nationality}}
           </div>
         </li>
 
@@ -76,7 +76,7 @@
         <li class="slds-page-header__detail-block">
           <div class="slds-text-title slds-truncate">Domicile</div>
           <div class="slds-truncate">
-            {{kycResult?.personalDetails?.domicile}}
+            {{kycResult.personalDetails?.domicile}}
           </div>
         </li>
       </ul>

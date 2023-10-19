@@ -1,7 +1,7 @@
 <div class="slds-m-horizontal_large">
 
-  <div *ngIf="kycResult.relationships.length > 0">
-    <app-relationship-table [relationships]="kycResult.relationships"></app-relationship-table>
+  <div *ngIf="kycResult.partnerRelations.relations.length > 0">
+    <app-relationship-table [relationships]="kycResult.partnerRelations.relations"></app-relationship-table>
   </div>
 
   <ul ngl-accordion *ngIf="kycResult?.remarks" activeName="remarks">

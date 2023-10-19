@@ -12,7 +12,7 @@
       <div class="slds-media__body">
         <h2 class="slds-card__header-title">
           <a href="#" class="slds-card__header-link slds-truncate" title="Contacts (1)">
-            <span>Related Accounts ({{relationships.length}})</span>
+            <span>Relationships ({{relationships.length}})</span>
           </a>
         </h2>
       </div>
@@ -55,7 +55,21 @@
           <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
             <span class="slds-assistive-text">Sort by: </span>
             <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
-              <span class="slds-truncate" title="Full Name">Full Name</span>
+              <span class="slds-truncate" title="Full Name">Last Name</span>
+              <span class="slds-icon_container slds-icon-utility-arrowdown">
+                  <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                  </svg>
+                </span>
+            </div>
+          </a>
+        </th>
+
+        <th aria-sort="none" class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+          <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+            <span class="slds-assistive-text">Sort by: </span>
+            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+              <span class="slds-truncate" title="Full Name">First Name</span>
               <span class="slds-icon_container slds-icon-utility-arrowdown">
                   <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
                     <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
@@ -92,6 +106,34 @@
             </div>
           </a>
         </th>
+
+        <th aria-sort="none" class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+          <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+            <span class="slds-assistive-text">Sort by: </span>
+            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+              <span class="slds-truncate" title="Date of Death">Nationality</span>
+              <span class="slds-icon_container slds-icon-utility-arrowdown">
+                  <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                  </svg>
+                </span>
+            </div>
+          </a>
+        </th>
+
+        <th aria-sort="none" class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+          <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+            <span class="slds-assistive-text">Sort by: </span>
+            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+              <span class="slds-truncate" title="Date of Death">Domicile</span>
+              <span class="slds-icon_container slds-icon-utility-arrowdown">
+                  <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                  </svg>
+                </span>
+            </div>
+          </a>
+        </th>
       </tr>
       </thead>
       <tbody>
@@ -106,10 +148,13 @@
           </div>
         </td>
         <td data-label="Relation" role="gridcell">
-          <div class="slds-truncate" title="{{ relationship.relation }}">{{ relationship.relation }}</div>
+          <div class="slds-truncate" title="{{ relationship.relationType }}">{{ relationship.relationType.toLowerCase() }}</div>
         </td>
-        <td data-label="Full Name" role="gridcell">
-          <div class="slds-truncate" title="{{ relationship.fullName }}">{{ relationship.fullName }}</div>
+        <td data-label="Last Name" role="gridcell">
+          <div class="slds-truncate" title="{{ relationship.lastName }}">{{ relationship.lastName }}</div>
+        </td>
+        <td data-label="First Name" role="gridcell">
+          <div class="slds-truncate" title="{{ relationship.firstName }}">{{ relationship.firstName }}</div>
         </td>
         <td data-label="Data of Birth" role="gridcell">
           <div class="slds-truncate" title="{{ relationship.dateOfBirth }}">
@@ -118,6 +163,14 @@
         </td>
         <td data-label="Data of Death" role="gridcell">
           <div class="slds-truncate" title="{{ relationship.dateOfDeath }}">{{ relationship.dateOfDeath }}</div>
+        </td>
+
+        <td data-label="Nationality" role="gridcell">
+          <div class="slds-truncate" title="{{ relationship.nationality }}">{{ relationship.nationality }}</div>
+        </td>
+
+        <td data-label="Domicile" role="gridcell">
+          <div class="slds-truncate" title="{{ relationship.domicile }}">{{ relationship.domicile }}</div>
         </td>
       </tr>
       </tbody>

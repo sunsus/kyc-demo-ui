@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendUrl: 'https://vt-kyc.azurewebsites.net' 
+  backendUrl: 'https://silent-relic-393813.ew.r.appspot.com' 
 };
